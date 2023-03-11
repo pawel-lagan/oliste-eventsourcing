@@ -1,0 +1,6 @@
+environment: test
+quarkus:
+  arc:
+    remove-unused-beans: false
+oliste:
+  package-name: net.oliste.dynamodb

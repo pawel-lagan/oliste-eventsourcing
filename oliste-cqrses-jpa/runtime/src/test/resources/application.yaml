@@ -1,0 +1,20 @@
+environment: test
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: user
+    password: password
+    reactive:
+      url: postgresql:///databasename?TC_IMAGE_TAG=9.6.8
+      max-size: 20
+  hibernate-orm:
+    log:
+      sql: true
+      level: DEBUG
+    database:
+      generation: update
+    physical-naming-strategy: net.oliste.jpa.hibernate.SnakeCasePhysicalNamingStrategy
+  arc:
+    remove-unused-beans: false
+oliste:
+  package-name: net.oliste.jpa
