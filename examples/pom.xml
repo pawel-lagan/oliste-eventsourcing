@@ -23,6 +23,7 @@
 
     <modules>
         <module>dynamodb-example</module>
+        <module>jpa-example</module>
     </modules>
     
 </project>

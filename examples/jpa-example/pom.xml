@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.oliste.eventsourcing</groupId>
+    <artifactId>jpa-example</artifactId>
+    <name>jpa-example</name>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>net.oliste.eventsourcing</groupId>
+        <artifactId>examples-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>		
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.oliste.eventsourcing</groupId>
+            <artifactId>oliste-cqrses-core-runtime</artifactId>
+            <version>${oliste-cqrses.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.oliste.eventsourcing</groupId>
+            <artifactId>oliste-cqrses-core-deployment</artifactId>
+            <version>${oliste-cqrses.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.oliste.eventsourcing</groupId>
+            <artifactId>oliste-cqrses-jpa-runtime</artifactId>
+            <version>${oliste-cqrses.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.oliste.eventsourcing</groupId>
+            <artifactId>oliste-cqrses-jpa-deployment</artifactId>
+            <version>${oliste-cqrses.version}</version>
+        </dependency>
+        <!-- Flyway specific dependencies -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-liquibase</artifactId>
+        </dependency>
+        <!-- JDBC driver dependencies -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jdbc-postgresql</artifactId>
+        </dependency>
+    </dependencies>
+</project>

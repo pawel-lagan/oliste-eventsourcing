@@ -1,0 +1,41 @@
+environment: test
+quarkus:
+  datasource:
+    # ----------------------- Disabled jdbc - JDBC is used only for liquibase migration
+    jdbc: false
+    db-kind: postgresql
+    username: postgresadmin
+    password: admin123
+    reactive:
+      url: postgresql://host.docker.internal:32452/jpa_example
+      max-size: 20
+    health:
+      enabled: true
+  hibernate-orm:
+    database:
+      generation: none
+    physical-naming-strategy: net.oliste.jpa.hibernate.SnakeCasePhysicalNamingStrategy
+  arc:
+    remove-unused-beans: false
+  index-dependency:
+    oliste-cqreses-core:
+      group-id: net.oliste.eventsourcing
+      artifact-id: oliste-cqrses-core-runtime
+    oliste-cqreses-jpa:
+      group-id: net.oliste.eventsourcing
+      artifact-id: oliste-cqrses-jpa-runtime
+
+  # ----------------------- Liquibase
+  liquibase:
+    change-log: db/changelog.sql
+    migrate-at-start: true
+
+# ----------------------- Oliste
+oliste:
+  package-name: net.oliste
+  liquibase:
+    migrate: true
+  cqrs:
+    enabled: true
+  es:
+    enabled: true
