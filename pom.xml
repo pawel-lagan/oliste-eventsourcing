@@ -17,6 +17,7 @@
         <module>oliste-cqrses-core</module>
 		<module>oliste-cqrses-jpa</module>
 		<module>oliste-cqrses-dynamodb</module>
+        <module>examples</module>
     </modules>
 	
 	 <distributionManagement>

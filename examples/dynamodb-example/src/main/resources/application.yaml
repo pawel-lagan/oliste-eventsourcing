@@ -1,0 +1,35 @@
+environment: test
+quarkus:
+  class-loading:
+    reloadable-artifacts: software.amazon.awssdk:dynamodb-enhanced
+  datasource:
+  devservices:
+      enabled: false
+  arc:
+    remove-unused-beans: false
+  index-dependency:
+    oliste-cqreses-core:
+      group-id: net.oliste.eventsourcing
+      artifact-id: oliste-cqrses-core-runtime
+    oliste-cqreses-dynamodb:
+      group-id: net.oliste.eventsourcing
+      artifact-id: oliste-cqrses-dynamodb-runtime
+
+  # ----------------------- DynamoDB
+  dynamodb:
+    endpoint-override: http://localhost:4566
+    aws:
+      region: eu-central-1
+      credentials:
+        type: static
+        static-provider:
+          access-key-id: test-key
+          secret-access-key: test-secret
+
+# ----------------------- Oliste
+oliste:
+  package-name: net.oliste
+  cqrs:
+    enabled: true
+  es:
+    enabled: true

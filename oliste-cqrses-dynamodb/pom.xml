@@ -23,7 +23,6 @@
 
     <properties>
         <aws.sdk>2.18.11</aws.sdk>
-        <oliste-cqrses.version>1.0-SNAPSHOT</oliste-cqrses.version>
     </properties>
 
     <repositories>
